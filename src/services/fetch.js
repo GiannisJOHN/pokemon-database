@@ -8,7 +8,6 @@ export function fetchAllPokemons(limit, url) {
 
 export function fetchPokemon(name) {
     const url = `https://pokeapi.co/api/v2/pokemon/${name}/`
-    
     return fetch(url).then((response) => {
         return response.json()
     })

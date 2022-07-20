@@ -1,7 +1,7 @@
 import NavBar from "../../components/navbar"
 import PokemonList from "../../components/pokemonList"
 import PokemonCard from "../../components/pokemonCard"
-import { useState } from 'react'
+import { React, useState } from 'react'
 import { PokemonContext } from '../../context/context.js'
 
 function HomePage() {
@@ -10,7 +10,6 @@ function HomePage() {
         state: pokemonName,
         updateState: setPokemonName
     }
-    console.log(PokemonContextValue);
     return (
         <>
         <div className="container pb-5">

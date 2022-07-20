@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState} from 'react'
+import { React, useEffect, useContext, useState} from 'react'
 import { fetchPokemon } from '../../services/fetch.js'
 import { PokemonContext } from '../../context/context.js'
 
@@ -14,9 +14,12 @@ function PokemonCard() {
     const [pokemon, setPokemon] = useState('')
     const [spinner, setSpinner] = useState('flex')
     const pokemonValue = useContext(PokemonContext)
-
+    
     useEffect(() => {
         setSpinner('flex')
+        if (pokemonValue.state === '') {
+            return
+        }
         fetchPokemon(pokemonValue.state).then((pokemon)=>{
             let pokemonInformation = new PokemonInformation(
                 pokemon.name,
@@ -29,7 +32,7 @@ function PokemonCard() {
             setSpinner('none')
         })
     }, [pokemonValue.state])
-    console.log(pokemon);
+    
     return (
         <>
         <div className='w-100' style={{overflow: 'hidden'}}>

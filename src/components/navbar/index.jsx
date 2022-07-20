@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { React, useContext } from 'react'
 import { StartContext } from '../../context/context.js'
 
 function NavBar() {

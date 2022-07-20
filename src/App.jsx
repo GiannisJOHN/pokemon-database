@@ -1,6 +1,6 @@
 import HomePage from './views/homePage/index.jsx'
 import LandingPage from './views/landingPage/index.jsx'
-import { useState } from 'react'
+import  { React, useState } from 'react'
 import { StartContext } from './context/context.js'
 
 function App() {
